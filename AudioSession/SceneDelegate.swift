@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         guard let window = self.window else { return }
         guard let navigation = window.rootViewController as? UINavigationController else { return }
-        guard let categories = navigation.topViewController as? CategoriesViewController else { return }
+        guard let categories = navigation.topViewController as? ViewController else { return }
         
         categories.controller = self.controller
     }

@@ -1,7 +1,7 @@
 import UIKit
 import Chaining
 
-class CategoriesViewController: UITableViewController {
+class ViewController: UITableViewController {
     enum Section: Int, CaseIterable {
         case category
         case mode
