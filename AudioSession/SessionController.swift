@@ -1,5 +1,6 @@
 import Foundation
+import Chaining
 
 class SessionController {
-    var category: Category = .playback
+    let category = ValueHolder<Category>(.playback)
 }

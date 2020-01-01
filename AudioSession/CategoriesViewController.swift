@@ -1,10 +1,20 @@
 import UIKit
+import Chaining
 
 class CategoriesViewController: UITableViewController {
     weak var controller: SessionController?
+    private var pool = ObserverPool()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let controller = self.controller else { return }
+        
+        let observer = controller.category.chain().do { [weak self] _ in
+            self?.tableView.reloadSections(.init(integer: 0), with: .fade)
+        }.sync()
+        
+        self.pool.add(observer)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -24,15 +34,13 @@ class CategoriesViewController: UITableViewController {
         
         let category = Category.allCases[indexPath.row]
         cell.textLabel?.text = category.name
-        cell.accessoryType = (self.controller?.category == category) ? .checkmark : .none
+        cell.accessoryType = (self.controller?.category.value == category) ? .checkmark : .none
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
         let category = Category.allCases[indexPath.row]
-        self.controller?.category = category
+        self.controller?.category.value = category
     }
 }
