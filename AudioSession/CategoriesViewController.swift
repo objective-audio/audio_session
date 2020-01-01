@@ -5,6 +5,15 @@ class CategoriesViewController: UITableViewController {
     enum Section: Int, CaseIterable {
         case category
         case mode
+        
+        var name: String {
+            switch self {
+            case .category:
+                return "Category"
+            case .mode:
+                return "Mode"
+            }
+        }
     }
     
     weak var controller: SessionController?
@@ -29,14 +38,7 @@ class CategoriesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let section = Section(rawValue: section) else { fatalError() }
-        
-        switch section {
-        case .category:
-            return "Category"
-        case .mode:
-            return "Mode"
-        }
+        return Section(rawValue: section)?.name
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
