@@ -1,0 +1,3 @@
+[submodule "SwiftChaining"]
+	path = SwiftChaining
+	url = git@github.com:objective-audio/SwiftChaining.git
