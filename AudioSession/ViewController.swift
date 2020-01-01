@@ -5,6 +5,7 @@ class ViewController: UITableViewController {
     enum Section: Int, CaseIterable {
         case category
         case mode
+        case activation
         
         var name: String {
             switch self {
@@ -12,6 +13,8 @@ class ViewController: UITableViewController {
                 return "Category"
             case .mode:
                 return "Mode"
+            case .activation:
+                return "Activation"
             }
         }
     }
@@ -31,6 +34,10 @@ class ViewController: UITableViewController {
         controller.mode.chain().do { [weak self] _ in
             self?.tableView.reloadSections(.init(integer: Section.mode.rawValue), with: .fade)
         }.sync().addTo(self.pool)
+        
+        controller.activation.chain().do { [weak self] _ in
+            self?.tableView.reloadSections(.init(integer: Section.activation.rawValue), with: .fade)
+        }.sync().addTo(self.pool)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,6 +56,8 @@ class ViewController: UITableViewController {
             return Category.allCases.count
         case .mode:
             return Mode.allCases.count
+        case .activation:
+            return Activation.allCases.count
         }
     }
     
@@ -61,27 +70,41 @@ class ViewController: UITableViewController {
         case .category:
             let category = Category.allCases[indexPath.row]
             cell.textLabel?.text = category.name
+            cell.textLabel?.textColor = .label
             cell.accessoryType = (self.controller?.category.value == category) ? .checkmark : .none
+            cell.selectionStyle = .default
         case .mode:
             let mode = Mode.allCases[indexPath.row]
             cell.textLabel?.text = mode.name
+            cell.textLabel?.textColor = .label
             cell.accessoryType = (self.controller?.mode.value == mode) ? .checkmark : .none
+            cell.selectionStyle = .default
+        case .activation:
+            guard let activation = Activation(rawValue: indexPath.row) else { fatalError() }
+            
+            guard let controller = self.controller else { break }
+            let isEnabled = controller.activation.value != activation
+            
+            cell.textLabel?.text = activation.name
+            cell.textLabel?.textColor = isEnabled ? .label : .quaternaryLabel
+            cell.accessoryType = .none
+            cell.selectionStyle = isEnabled ? .default : .none
         }
-        
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+        guard let controller = self.controller else { return }
         
         switch section {
         case .category:
-            let category = Category.allCases[indexPath.row]
-            self.controller?.category.value = category
+            controller.category.value = Category.allCases[indexPath.row]
         case .mode:
-            let mode = Mode.allCases[indexPath.row]
-            self.controller?.mode.value = mode
+            controller.mode.value = Mode.allCases[indexPath.row]
+        case .activation:
+            controller.activation.value = Activation.allCases[indexPath.row]
         }
     }
 }
