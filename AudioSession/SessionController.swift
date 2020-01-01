@@ -23,6 +23,7 @@ class SessionController {
     
     private func activate() {
         try? self.session.setCategory(self.category.value.sessionCategory)
+        try? self.session.setMode(self.mode.value.sessionMode)
         try? self.session.setActive(true, options: [])
     }
     
