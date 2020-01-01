@@ -22,6 +22,16 @@ class SessionController {
         }.end().addTo(self.pool)
     }
     
+    func toggleCategoryOption(_ option: CategoryOption) {
+        var options = self.categoryOptions.value
+        
+        if options.contains(option) {
+            options.remove(option)
+        } else {
+            options.insert(option)
+        }
+    }
+    
     private func activate() {
         try? self.session.setCategory(self.category.value.sessionCategory, mode: self.mode.value.sessionMode, options: self.categoryOptions.value.sessionOptions)
         try? self.session.setActive(true, options: [])

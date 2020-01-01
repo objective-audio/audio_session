@@ -5,12 +5,15 @@ class ViewController: UITableViewController {
     enum Section: Int, CaseIterable {
         case activation
         case category
+        case categoryOptions
         case mode
         
         var name: String {
             switch self {
             case .category:
                 return "Category"
+            case .categoryOptions:
+                return "CategoryOptions"
             case .mode:
                 return "Mode"
             case .activation:
@@ -54,6 +57,8 @@ class ViewController: UITableViewController {
         switch section {
         case .category:
             return Category.allCases.count
+        case .categoryOptions:
+            return CategoryOption.allCases.count
         case .mode:
             return Mode.allCases.count
         case .activation:
@@ -72,6 +77,12 @@ class ViewController: UITableViewController {
             cell.textLabel?.text = category.name
             cell.textLabel?.textColor = .label
             cell.accessoryType = (self.controller?.category.value == category) ? .checkmark : .none
+            cell.selectionStyle = .default
+        case .categoryOptions:
+            let option = CategoryOption.allCases[indexPath.row]
+            cell.textLabel?.text = option.name
+            cell.textLabel?.textColor = .label
+            cell.accessoryType = (self.controller?.categoryOptions.value.contains(option)) ?? false ? .checkmark : .none
             cell.selectionStyle = .default
         case .mode:
             let mode = Mode.allCases[indexPath.row]
@@ -101,6 +112,8 @@ class ViewController: UITableViewController {
         switch section {
         case .category:
             controller.category.value = Category.allCases[indexPath.row]
+        case .categoryOptions:
+            controller.toggleCategoryOption(CategoryOption.allCases[indexPath.row])
         case .mode:
             controller.mode.value = Mode.allCases[indexPath.row]
         case .activation:
