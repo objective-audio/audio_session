@@ -20,6 +20,29 @@ enum Mode: CaseIterable {
     case spokenAudio
     case voicePrompt
     
+    var name: String {
+        switch self {
+        case .default:
+            return "Default"
+        case .voiceChat:
+            return "VoiceChat"
+        case .gameChat:
+            return "GameChat"
+        case .videoRecording:
+            return "VideoRecording"
+        case .measurement:
+            return "Measurement"
+        case .moviePlayback:
+            return "MoviePlayback"
+        case .videoChat:
+            return "VideoChat"
+        case .spokenAudio:
+            return "SpokenAudio"
+        case .voicePrompt:
+            return "VoicePrompt"
+        }
+    }
+    
     var sessionMode: AVAudioSession.Mode {
         switch self {
         case .default:
