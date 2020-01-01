@@ -3,9 +3,9 @@ import Chaining
 
 class ViewController: UITableViewController {
     enum Section: Int, CaseIterable {
+        case activation
         case category
         case mode
-        case activation
         
         var name: String {
             switch self {
