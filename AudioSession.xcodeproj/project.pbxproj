@@ -13,6 +13,7 @@
 		B661E67523BC594A0019E435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B661E67323BC594A0019E435 /* Main.storyboard */; };
 		B661E67723BC594B0019E435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B661E67623BC594B0019E435 /* Assets.xcassets */; };
 		B661E67A23BC594B0019E435 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B661E67823BC594B0019E435 /* LaunchScreen.storyboard */; };
+		B661E68223BCB5180019E435 /* CategoryOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = B661E68123BCB5180019E435 /* CategoryOption.swift */; };
 		B6AC35D123BC657100F81BF9 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC35D023BC657100F81BF9 /* SessionController.swift */; };
 		B6AC35D323BC65A300F81BF9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AC35D223BC65A300F81BF9 /* Category.swift */; };
 		B6AC35D623BC6C5500F81BF9 /* Chaining.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AC35D523BC6C5500F81BF9 /* Chaining.framework */; };
@@ -44,6 +45,7 @@
 		B661E67623BC594B0019E435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B661E67923BC594B0019E435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B661E67B23BC594B0019E435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B661E68123BCB5180019E435 /* CategoryOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryOption.swift; sourceTree = "<group>"; };
 		B6AC35D023BC657100F81BF9 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 		B6AC35D223BC65A300F81BF9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B6AC35D523BC6C5500F81BF9 /* Chaining.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Chaining.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 				B661E67123BC594A0019E435 /* ViewController.swift */,
 				B6AC35D023BC657100F81BF9 /* SessionController.swift */,
 				B6AC35D223BC65A300F81BF9 /* Category.swift */,
+				B661E68123BCB5180019E435 /* CategoryOption.swift */,
 				B6AC35D923BC6F6700F81BF9 /* Mode.swift */,
 				B6AC35DB23BC7B5400F81BF9 /* Activation.swift */,
 				B661E67323BC594A0019E435 /* Main.storyboard */,
@@ -180,6 +183,7 @@
 			files = (
 				B661E67223BC594A0019E435 /* ViewController.swift in Sources */,
 				B6AC35D323BC65A300F81BF9 /* Category.swift in Sources */,
+				B661E68223BCB5180019E435 /* CategoryOption.swift in Sources */,
 				B6AC35DA23BC6F6700F81BF9 /* Mode.swift in Sources */,
 				B661E66E23BC594A0019E435 /* AppDelegate.swift in Sources */,
 				B661E67023BC594A0019E435 /* SceneDelegate.swift in Sources */,
