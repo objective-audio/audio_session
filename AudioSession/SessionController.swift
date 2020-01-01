@@ -30,6 +30,8 @@ class SessionController {
         } else {
             options.insert(option)
         }
+        
+        self.categoryOptions.value = options
     }
     
     private func activate() {
