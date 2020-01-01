@@ -4,6 +4,7 @@ import Chaining
 
 class SessionController {
     let category = ValueHolder<Category>(.playback)
+    let categoryOptions = ValueHolder<[CategoryOption]>([])
     let mode = ValueHolder<Mode>(.default)
     let activation = ValueHolder<Activation>(.deactive)
     
@@ -22,8 +23,7 @@ class SessionController {
     }
     
     private func activate() {
-        try? self.session.setCategory(self.category.value.sessionCategory)
-        try? self.session.setMode(self.mode.value.sessionMode)
+        try? self.session.setCategory(self.category.value.sessionCategory, mode: self.mode.value.sessionMode, options: self.categoryOptions.value.sessionOptions)
         try? self.session.setActive(true, options: [])
     }
     
