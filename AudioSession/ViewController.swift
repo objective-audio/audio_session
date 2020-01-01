@@ -34,6 +34,10 @@ class ViewController: UITableViewController {
             self?.tableView.reloadSections(.init(integer: Section.category.rawValue), with: .fade)
         }.sync().addTo(self.pool)
         
+        controller.categoryOptions.chain().do { [weak self] _ in
+            self?.tableView.reloadSections(.init(integer: Section.categoryOptions.rawValue), with: .fade)
+        }.sync().addTo(self.pool)
+        
         controller.mode.chain().do { [weak self] _ in
             self?.tableView.reloadSections(.init(integer: Section.mode.rawValue), with: .fade)
         }.sync().addTo(self.pool)
