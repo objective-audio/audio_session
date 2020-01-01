@@ -49,7 +49,7 @@ enum CategoryOption: Int, CaseIterable {
     }
 }
 
-extension Array where Element == CategoryOption {
+extension Set where Element == CategoryOption {
     var sessionOptions: AVAudioSession.CategoryOptions {
         return self.map { $0.sessionOption }.reduce(into: AVAudioSession.CategoryOptions()) { $0.insert($1) }
     }

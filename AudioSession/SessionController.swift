@@ -4,7 +4,7 @@ import Chaining
 
 class SessionController {
     let category = ValueHolder<Category>(.playback)
-    let categoryOptions = ValueHolder<[CategoryOption]>([])
+    let categoryOptions = ValueHolder<Set<CategoryOption>>([])
     let mode = ValueHolder<Mode>(.default)
     let activation = ValueHolder<Activation>(.deactive)
     
