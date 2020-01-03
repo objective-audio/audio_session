@@ -10,14 +10,14 @@ class ViewController: UITableViewController {
         
         var name: String {
             switch self {
+            case .activation:
+                return "Activation"
             case .category:
                 return "Category"
             case .categoryOptions:
                 return "CategoryOptions"
             case .mode:
                 return "Mode"
-            case .activation:
-                return "Activation"
             }
         }
     }
@@ -59,14 +59,14 @@ class ViewController: UITableViewController {
         guard let section = Section(rawValue: section) else { fatalError() }
         
         switch section {
+        case .activation:
+            return Activation.allCases.count
         case .category:
             return Category.allCases.count
         case .categoryOptions:
             return CategoryOption.allCases.count
         case .mode:
             return Mode.allCases.count
-        case .activation:
-            return Activation.allCases.count
         }
     }
     
@@ -76,6 +76,16 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
         switch section {
+        case .activation:
+            guard let activation = Activation(rawValue: indexPath.row) else { fatalError() }
+            
+            guard let controller = self.controller else { break }
+            let isEnabled = controller.activation.value != activation
+            
+            cell.textLabel?.text = activation.name
+            cell.textLabel?.textColor = isEnabled ? .label : .quaternaryLabel
+            cell.accessoryType = .none
+            cell.selectionStyle = isEnabled ? .default : .none
         case .category:
             let category = Category.allCases[indexPath.row]
             cell.textLabel?.text = category.name
@@ -94,16 +104,6 @@ class ViewController: UITableViewController {
             cell.textLabel?.textColor = .label
             cell.accessoryType = (self.controller?.mode.value == mode) ? .checkmark : .none
             cell.selectionStyle = .default
-        case .activation:
-            guard let activation = Activation(rawValue: indexPath.row) else { fatalError() }
-            
-            guard let controller = self.controller else { break }
-            let isEnabled = controller.activation.value != activation
-            
-            cell.textLabel?.text = activation.name
-            cell.textLabel?.textColor = isEnabled ? .label : .quaternaryLabel
-            cell.accessoryType = .none
-            cell.selectionStyle = isEnabled ? .default : .none
         }
         
         return cell
@@ -114,14 +114,14 @@ class ViewController: UITableViewController {
         guard let controller = self.controller else { return }
         
         switch section {
+        case .activation:
+            controller.activation.value = Activation.allCases[indexPath.row]
         case .category:
             controller.category.value = Category.allCases[indexPath.row]
         case .categoryOptions:
             controller.toggleCategoryOption(CategoryOption.allCases[indexPath.row])
         case .mode:
             controller.mode.value = Mode.allCases[indexPath.row]
-        case .activation:
-            controller.activation.value = Activation.allCases[indexPath.row]
         }
     }
 }
