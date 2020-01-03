@@ -18,6 +18,8 @@ class SessionController {
                 self?.activate()
             case .deactive:
                 self?.deactivate()
+            case .deactiveWithNotifyOthers:
+                self?.deactivateAndNotifyOthers()
             }
         }.end().addTo(self.pool)
     }
@@ -41,5 +43,9 @@ class SessionController {
     
     private func deactivate() {
         try? self.session.setActive(false, options: [])
+    }
+    
+    private func deactivateAndNotifyOthers() {
+        try? self.session.setActive(false, options: [.notifyOthersOnDeactivation])
     }
 }

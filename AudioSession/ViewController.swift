@@ -80,7 +80,7 @@ class ViewController: UITableViewController {
             guard let activation = Activation(rawValue: indexPath.row) else { fatalError() }
             
             guard let controller = self.controller else { break }
-            let isEnabled = controller.activation.value != activation
+            let isEnabled = controller.activation.value.isActive != activation.isActive
             
             cell.textLabel?.text = activation.name
             cell.textLabel?.textColor = isEnabled ? .label : .quaternaryLabel
