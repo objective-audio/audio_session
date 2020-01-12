@@ -5,6 +5,9 @@
       location = "group:AudioSession.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:AudioSessionSwiftUI/AudioSessionSwiftUI.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SwiftChaining/SwiftChaining_ios/SwiftChaining_ios.xcodeproj">
    </FileRef>
 </Workspace>
