@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:AudioSession.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:AudioSessionSwiftUI/AudioSessionSwiftUI.xcodeproj">
    </FileRef>
    <FileRef
