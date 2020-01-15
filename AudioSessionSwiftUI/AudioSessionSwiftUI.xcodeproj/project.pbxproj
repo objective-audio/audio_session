@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B635731223CC9AD1006EAC99 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635731123CC9AD1006EAC99 /* SessionManager.swift */; };
+		B635731223CC9AD1006EAC99 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B635731123CC9AD1006EAC99 /* SessionController.swift */; };
 		B6398B0723CB6455006B0D64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6398B0623CB6455006B0D64 /* AppDelegate.swift */; };
 		B6398B0923CB6455006B0D64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6398B0823CB6455006B0D64 /* SceneDelegate.swift */; };
 		B6398B0B23CB6455006B0D64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6398B0A23CB6455006B0D64 /* ContentView.swift */; };
@@ -33,7 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B635731123CC9AD1006EAC99 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		B635731123CC9AD1006EAC99 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 		B6398B0323CB6455006B0D64 /* AudioSessionSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioSessionSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6398B0623CB6455006B0D64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6398B0823CB6455006B0D64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		B694585E23CC0C4100D39967 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B635731123CC9AD1006EAC99 /* SessionManager.swift */,
+				B635731123CC9AD1006EAC99 /* SessionController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 				B694586623CC0C6800D39967 /* Activation.swift in Sources */,
 				B694586823CC0C6800D39967 /* Mode.swift in Sources */,
 				B694586723CC0C6800D39967 /* CategoryOption.swift in Sources */,
-				B635731223CC9AD1006EAC99 /* SessionManager.swift in Sources */,
+				B635731223CC9AD1006EAC99 /* SessionController.swift in Sources */,
 				B694586A23CC15ED00D39967 /* RowView.swift in Sources */,
 				B694586523CC0C6800D39967 /* Category.swift in Sources */,
 				B6398B0923CB6455006B0D64 /* SceneDelegate.swift in Sources */,

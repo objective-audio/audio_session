@@ -25,7 +25,7 @@ private enum SessionSection: Int, CaseIterable {
 }
 
 struct ContentView: View {
-    @ObservedObject var manager: SessionManager
+    @ObservedObject var manager: SessionController
     
     var body: some View {
         NavigationView {
@@ -72,6 +72,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(manager: SessionManager())
+        ContentView(manager: SessionController())
     }
 }

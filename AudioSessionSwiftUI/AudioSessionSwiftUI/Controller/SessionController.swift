@@ -1,5 +1,5 @@
 //
-//  SessionManager.swift
+//  SessionController.swift
 //
 
 import Foundation
@@ -7,7 +7,7 @@ import Combine
 import SwiftUI
 import AVFoundation
 
-class SessionManager: ObservableObject {
+class SessionController: ObservableObject {
     @Published var activation: Activation = .deactive
     @Published var category: Category = .playback
     @Published var categoryOptions: Set<CategoryOption> = []
